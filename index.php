@@ -138,15 +138,50 @@
 
     ## Snack 5
 
-    // Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
+    // // Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.
 
-    $paragraph = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur doloremque quibusdam, quam accusamus porro et nulla aperiam repellendus. Consequuntur ipsum dolorum earum eum obcaecati aliquid at, ratione maiores natus debitis?';
+    // $paragraph = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur doloremque quibusdam, quam accusamus porro et nulla aperiam repellendus. Consequuntur ipsum dolorum earum eum obcaecati aliquid at, ratione maiores natus debitis?';
 
-    echo $paragraph;
+    // echo $paragraph;
 
-    $newPara = explode('.',$paragraph);
+    // $newPara = explode('.',$paragraph);
 
-    var_dump($newPara);
+    // var_dump($newPara);
+
+    ## Snack 6
+
+    // // Utilizzare questo array: https://pastebin.com/CkX3680A. Includerlo in un file database.php... Stampiamo poi il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde. 
+
+    // include __DIR__.'/db.php';
+
+    // foreach ($db as $key => $group) {
+    //     if ($key == 'teachers') {
+    //         echo '<div id="teachers" style="background: grey;">';
+    //         echo '<h1>'.$key.'</h1>';
+    //     }
+    //     else {
+    //         echo '<div id="pm" style="background: green;">';
+    //         echo '<h1>'.$key.'</h1>';
+    //     }
+
+    //     foreach ($group as $key => $person) {
+    //         echo '<p>'.$person['name'].' ';
+    //         echo $person['lastname'].'</p>';   
+    //     }
+    // }
+
+    ## Snack 7
+
+    //Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+    
+    include __DIR__.'/db.php';
+    include __DIR__.'/functions.php';
+
+    foreach ($class as $key => $student) {
+        echo '<h1>'.$student['name'].' '.$student['lastname'].'</h1>';
+       echo '<p> average: '.average($student['marks']).'</p>';
+    }
+
     ?>
 </body>
 </html>
