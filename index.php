@@ -172,15 +172,36 @@
 
     ## Snack 7
 
-    //Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
+    // //Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
     
-    include __DIR__.'/db.php';
-    include __DIR__.'/functions.php';
+    // include __DIR__.'/db.php';
+    // include __DIR__.'/functions.php';
 
-    foreach ($class as $key => $student) {
-        echo '<h1>'.$student['name'].' '.$student['lastname'].'</h1>';
-       echo '<p> average: '.average($student['marks']).'</p>';
+    // foreach ($class as $key => $student) {
+    //     echo '<h1>'.$student['name'].' '.$student['lastname'].'</h1>';
+    //    echo '<p> average: '.average($student['marks']).'</p>';
+    // }
+
+    ## Snack 8
+
+    //Partendo da questo array: https://www.codepile.net/pile/Po60bjgQ . Ad ogni refresh della pagina visualizzare una pubblicità a schermo, tenendo conto che possono essere sorteggiate solo quelle is_active true.
+
+    include __DIR__.'/db.php';
+    
+    $activeAds = [];
+
+    foreach ($ads as $ad){
+        
+        if ($ad['is_active']){
+            $activeAds[] = $ad;
+        }
+
     }
+
+    $currentAd = $activeAds[rand(0, count($activeAds)-1)];
+
+    echo '<img width="200px" src="' .$currentAd['image_path'].'">';
+
 
     ?>
 </body>
